@@ -41,7 +41,6 @@ theme.bg_focus                                  = "#e84545"
 theme.bg_urgent                                 = "#ffc93c"
 theme.bg_systray                                = "#4b5d67"
 theme.bg_urgent                                 = "#e9896a"
-theme.bg_systray                                = bg_normal 
 theme.taglist_fg_focus                          = "#282a36"
 theme.tasklist_bg_focus                         = bg_focus 
 theme.tasklist_fg_focus                         = "#FFFFFF"
