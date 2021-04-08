@@ -75,7 +75,7 @@ local altkey     = "Mod1"
 local ctrl       = "Control"
 
 -- personal variables
-local browser           = "firefox"
+local browser           = "librewolf"
 local editor            = os.getenv("EDITOR") or "nvim"
 local editorgui         = "geany"
 local filemanager       = "pcmanfm"

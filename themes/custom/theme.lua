@@ -4,6 +4,7 @@ local awful                 = require("awful")
 local wibox                 = require("wibox")
 local beautiful             = require("beautiful")
 local naughty               = require("naughty")
+local freedesktop   = require("freedesktop")
 
 -- Widgets
 local volumearc_widget      = require("awesome-wm-widgets.volumearc-widget.volumearc")
@@ -121,7 +122,25 @@ terminal = "kitty"
 local markup = lain.util.markup
 
 beautiful.awesome_icon = theme.confdir .. "/icons/arch.png"
-mylauncher = awful.widget.launcher({ image = beautiful.awesome_icon, menu = mymainmenu })
+
+awful.util.mymainmenu = freedesktop.menu.build({
+    icon_size = beautiful.menu_height or 16,
+    before = {
+        { "Awesome", myawesomemenu, beautiful.awesome_icon },
+        --{ "Atom", "atom" },
+        -- other triads can be put here
+    },
+    after = {
+        { "Terminal", terminal },
+        { "Log out", function() awesome.quit() end },
+        { "Sleep", "betterlockscreen -s" },
+        { "Restart", "systemctl reboot" },
+        { "Exit", "systemctl poweroff" },
+        -- other triads can be put here
+    }
+})
+
+mylauncher = awful.widget.launcher({ image = beautiful.awesome_icon, resize = true, menu = awful.util.mymainmenu })
 
 -- Battery Widget
 bat_widget = battery_widget({
@@ -446,6 +465,7 @@ function theme.at_screen_connect(s)
         expand = "none",
         {
             layout = wibox.layout.fixed.horizontal,
+            wrap_bg(wrap_margin(mylauncher, "#4b5d67"), "#4b5d67"),
             wrap_bg(wrap_margin(s.mytaglist, "#4b5d67"), "#4b5d67"),
         },
         {
