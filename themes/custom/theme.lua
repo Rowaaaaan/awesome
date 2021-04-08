@@ -16,12 +16,11 @@ local calendar_widget       = require("awesome-wm-widgets.calendar-widget.calend
 local fs_widget             = require("awesome-wm-widgets.fs-widget.fs-widget")
 local todo_widget           = require("awesome-wm-widgets.todo-widget.todo")
 local net_speed_widget      = require("awesome-wm-widgets.net-speed-widget.net-speed")
-
 -- Street turtle weather widget
 local weather_widget        = require("awesome-wm-widgets.weather-widget.weather")
 
 local spotify_widget     = require("awesome-wm-widgets.spotify-widget.spotify")
---local logout             = require("awesome-wm-widgets.logout-widget.logout")
+-- local logout             = require("awesome-wm-widgets.logout-widget.logout")
 
 -- For powerline separators
 local separators            = lain.util.separators
@@ -41,6 +40,8 @@ theme.bg_normal                                 = "#26282b"
 theme.bg_focus                                  = "#e84545"
 theme.bg_urgent                                 = "#ffc93c"
 theme.bg_systray                                = "#4b5d67"
+theme.bg_urgent                                 = "#e9896a"
+theme.bg_systray                                = bg_normal 
 theme.taglist_fg_focus                          = "#282a36"
 theme.tasklist_bg_focus                         = bg_focus 
 theme.tasklist_fg_focus                         = "#FFFFFF"
@@ -164,7 +165,8 @@ volbar:connect_signal("button::press", function(_, _, _, button)   -- Overwrites
         end
     end
 )
-    -- Brightness arc widget
+
+-- Brightness arc widget
 local brightarc = brightnessarc_widget({
     get_brightness_cmd = 'light -G',
     inc_brightness_cmd = 'light -A 5',
