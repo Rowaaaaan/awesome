@@ -3,6 +3,8 @@ My awesome config
 Originally ripped from awesomecopycats, dt, and CTT, I have made a bastardized version of my own rice.
 I keep multiple rices which can be found in themes/.
 
+![rice.png](assets/rice.png)
+
 Todo
 =======
 - [ ] Refactor rc.lua
@@ -11,4 +13,3 @@ Todo
 - [ ] Implement bling window swallowing
 - [ ] Create music widget for the bottom bar
 
-![rice.png](assets/rice.png)
